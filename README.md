@@ -61,6 +61,7 @@ cleos push action badeosiocode hi '["eosiocode111"]' -p eosiocode111@active
 
 通过对比执行命令前后eosiocode111账户余额  
 发现10 EOS被合约账号偷走了  
+而这是在用户毫不知情的情况下发生的  
 ```
 + cleos get account badeosiocode
 + grep liquid
