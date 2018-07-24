@@ -6,7 +6,7 @@
 还请多多指正  
 谢谢  
 
-普通用户千万不要向不信任的合约账号开放eosio.code权限  
+**普通用户千万不要向不信任的合约账号开放eosio.code权限**  
 
 ## 权限查看
 使用如下命令  
@@ -60,7 +60,7 @@ cleos push action badeosiocode hi '["eosiocode111"]' -p eosiocode111@active
 ```
 
 通过对比执行命令前后eosiocode111账户余额  
-发行10 EOS被合约账号偷走了  
+发现10 EOS被合约账号偷走了  
 ```
 + cleos get account badeosiocode
 + grep liquid
