@@ -24,6 +24,7 @@ warning: transaction executed locally, but may not be confirmed by the network y
 注意这里使用的-p权限，并不是传递的参数的用户eosiocode111  
 但是，仍然实现了转账操作  
 eosiocode111账号中的EOS被转走了  
+当然，这里-p后面的权限可以是任何人  
 
 ## 权限查看
 使用如下命令  
