@@ -8,7 +8,7 @@ namespace hashdapp {
 
     void badeosiocode::hi( account_name user )
     {
-        require_auth(user);
+        //require_auth(user);
 
         print( "Hello, ", name{user} );
 
