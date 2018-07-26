@@ -12,7 +12,7 @@
 在代码中，现在把这个判断require_auth(user);注释掉  
 使用如下命令进行测试
 ```
-￥ cleos push action badeosiocode hi '["eosiocode111"]' -p badeosiocode@active
+$ cleos push action badeosiocode hi '["eosiocode111"]' -p badeosiocode@active
 executed transaction: c09547c74ea9723e247478560dc30d45c1a6fc5e3f6c6b56409dba9eb815ac0a  104 bytes  2811 us
 #  badeosiocode <= badeosiocode::hi             {"user":"eosiocode111"}
 >> Hello, eosiocode111
